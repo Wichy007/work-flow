@@ -195,6 +195,78 @@
           box-shadow: none;
         }
       }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .header {
+          padding: 20px;
+        }
+
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .content {
+          padding: 20px;
+        }
+
+        .schedule-title {
+          font-size: 1.3rem;
+        }
+
+        .shift-header {
+          font-size: 1.1rem;
+        }
+
+        .step {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .step-number {
+          margin-bottom: 10px;
+        }
+
+        .responsible {
+          word-break: break-all;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .header h1 {
+          font-size: 1.8rem;
+        }
+
+        .content {
+          padding: 15px;
+        }
+
+        .schedule-section {
+          padding: 20px;
+        }
+
+        .shift {
+          padding: 15px;
+        }
+
+        .shift-header {
+          padding: 12px 15px;
+        }
+
+        .step-content {
+          line-height: 1.5;
+        }
+
+        .time-badge {
+          display: block;
+          margin-left: 0;
+          margin-top: 5px;
+          text-align: center;
+        }
+      }
     </style>
   </head>
   <body>
@@ -382,44 +454,6 @@
             }, 100);
           }, index * 200);
         });
-      });
-
-      // ฟังก์ชันสำหรับ Print เป็น PDF
-      function printToPDF() {
-        window.print();
-      }
-
-      // เพิ่มปุ่ม Print PDF
-      document.addEventListener("DOMContentLoaded", function () {
-        const printButton = document.createElement("button");
-        printButton.innerHTML = "📄 บันทึกเป็น PDF";
-        printButton.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: #e74c3c;
-                color: white;
-                border: none;
-                padding: 12px 20px;
-                border-radius: 25px;
-                font-weight: 600;
-                cursor: pointer;
-                box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
-                z-index: 1000;
-                transition: all 0.3s ease;
-            `;
-
-        printButton.addEventListener("click", printToPDF);
-        printButton.addEventListener("mouseenter", function () {
-          this.style.transform = "translateY(-2px)";
-          this.style.boxShadow = "0 6px 20px rgba(231, 76, 60, 0.6)";
-        });
-        printButton.addEventListener("mouseleave", function () {
-          this.style.transform = "translateY(0)";
-          this.style.boxShadow = "0 4px 15px rgba(231, 76, 60, 0.4)";
-        });
-
-        document.body.appendChild(printButton);
       });
     </script>
   </body>
